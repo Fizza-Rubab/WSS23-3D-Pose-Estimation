@@ -1,0 +1,118 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='WolframDesktop 13.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       161,          7]
+NotebookDataLength[      3633,        108]
+NotebookOptionsPosition[      2340,         79]
+NotebookOutlinePosition[      2739,         95]
+CellTagsIndexPosition[      2696,         92]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.89703537895297*^9, 
+  3.8970354012989435`*^9}},ExpressionUUID->"9395a687-93b8-448c-ba94-\
+4aad66f606c1"],
+
+Cell[CellGroupData[{
+
+Cell["Wolfram Summer School Project", "Title",
+ CellChangeTimes->{{3.89703543225438*^9, 
+  3.897035445243086*^9}},ExpressionUUID->"ecd1d4ea-d67e-47f4-a919-\
+1105da1223a6"],
+
+Cell[CellGroupData[{
+
+Cell["Project Title", "Section",
+ CellChangeTimes->{{3.8970354694993973`*^9, 
+  3.897035487814585*^9}},ExpressionUUID->"41fe0b7f-f0c4-4bfa-9a6b-\
+b563a28eecae"],
+
+Cell["3D Human Pose Estimation using Machine Learning", "Text",
+ CellChangeTimes->{{3.897035528058174*^9, 
+  3.8970355587318506`*^9}},ExpressionUUID->"346a3001-ca3d-41d2-94c2-\
+86d0684cbc1e"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Project Description", "Section",
+ CellChangeTimes->{{3.897035501871215*^9, 
+  3.897035520544587*^9}},ExpressionUUID->"3f090a20-c867-48fa-baf3-\
+1b2c650285d3"],
+
+Cell["This project attempts to ...", "Text",
+ CellChangeTimes->{{3.8970355686577444`*^9, 
+  3.897035592632523*^9}},ExpressionUUID->"e9149b06-d2ad-42c7-9a27-\
+f8eaf42cb312"],
+
+Cell["Motivation", "Subsection",
+ CellChangeTimes->{{3.8970355974678926`*^9, 
+  3.897035612058592*^9}},ExpressionUUID->"cd98ad09-3214-4754-9aa6-\
+e99e57409a71"],
+
+Cell["Objective", "Subsection",
+ CellChangeTimes->{{3.8970356228212776`*^9, 
+  3.897035635460528*^9}},ExpressionUUID->"64a19c6e-604e-4e2d-877c-\
+c9e3ed20086a"],
+
+Cell["Scope", "Subsection",
+ CellChangeTimes->{{3.897035642655577*^9, 
+  3.897035650294092*^9}},ExpressionUUID->"94a0b3ab-ae09-46aa-a2ed-\
+b005b4d44e7b"],
+
+Cell["Future Work", "Subsection",
+ CellChangeTimes->{{3.8970356559809537`*^9, 
+  3.8970356587966166`*^9}},ExpressionUUID->"3e5f42f3-81ff-4edd-9d5f-\
+8b1460156028"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{949, 461},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"13.2 for Microsoft Windows (64-bit) (January 31, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"de8eb4c5-1dd2-4402-b35a-6283f09f90ec"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[561, 20, 153, 3, 28, "Input",ExpressionUUID->"9395a687-93b8-448c-ba94-4aad66f606c1"],
+Cell[CellGroupData[{
+Cell[739, 27, 171, 3, 98, "Title",ExpressionUUID->"ecd1d4ea-d67e-47f4-a919-1105da1223a6"],
+Cell[CellGroupData[{
+Cell[935, 34, 160, 3, 67, "Section",ExpressionUUID->"41fe0b7f-f0c4-4bfa-9a6b-b563a28eecae"],
+Cell[1098, 39, 191, 3, 35, "Text",ExpressionUUID->"346a3001-ca3d-41d2-94c2-86d0684cbc1e"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1326, 47, 164, 3, 67, "Section",ExpressionUUID->"3f090a20-c867-48fa-baf3-1b2c650285d3"],
+Cell[1493, 52, 172, 3, 35, "Text",ExpressionUUID->"e9149b06-d2ad-42c7-9a27-f8eaf42cb312"],
+Cell[1668, 57, 160, 3, 54, "Subsection",ExpressionUUID->"cd98ad09-3214-4754-9aa6-e99e57409a71"],
+Cell[1831, 62, 159, 3, 38, "Subsection",ExpressionUUID->"64a19c6e-604e-4e2d-877c-c9e3ed20086a"],
+Cell[1993, 67, 153, 3, 38, "Subsection",ExpressionUUID->"94a0b3ab-ae09-46aa-a2ed-b005b4d44e7b"],
+Cell[2149, 72, 163, 3, 38, "Subsection",ExpressionUUID->"3e5f42f3-81ff-4edd-9d5f-8b1460156028"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
