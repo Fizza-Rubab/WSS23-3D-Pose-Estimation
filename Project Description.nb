@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       161,          7]
-NotebookDataLength[      3633,        108]
-NotebookOptionsPosition[      2340,         79]
-NotebookOutlinePosition[      2739,         95]
-CellTagsIndexPosition[      2696,         92]
+NotebookDataLength[      8463,        206]
+NotebookOptionsPosition[      6661,        165]
+NotebookOutlinePosition[      7060,        181]
+CellTagsIndexPosition[      7017,        178]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -37,43 +37,129 @@ Cell["Project Title", "Section",
   3.897035487814585*^9}},ExpressionUUID->"41fe0b7f-f0c4-4bfa-9a6b-\
 b563a28eecae"],
 
-Cell["3D Human Pose Estimation using Machine Learning", "Text",
- CellChangeTimes->{{3.897035528058174*^9, 
-  3.8970355587318506`*^9}},ExpressionUUID->"346a3001-ca3d-41d2-94c2-\
+Cell["3D Human Pose Estimation using Neural Networks", "Text",
+ CellChangeTimes->{{3.897035528058174*^9, 3.8970355587318506`*^9}, {
+  3.8971366508630934`*^9, 3.8971366538150434`*^9}, {3.89713779349139*^9, 
+  3.897137796849845*^9}, {3.8971459381108227`*^9, 
+  3.8971459393187003`*^9}},ExpressionUUID->"346a3001-ca3d-41d2-94c2-\
 86d0684cbc1e"]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
 Cell["Project Description", "Section",
- CellChangeTimes->{{3.897035501871215*^9, 
-  3.897035520544587*^9}},ExpressionUUID->"3f090a20-c867-48fa-baf3-\
+ CellChangeTimes->{{3.897035501871215*^9, 3.897035520544587*^9}, {
+  3.8971468993678446`*^9, 
+  3.897146900343054*^9}},ExpressionUUID->"3f090a20-c867-48fa-baf3-\
 1b2c650285d3"],
 
-Cell["This project attempts to ...", "Text",
- CellChangeTimes->{{3.8970355686577444`*^9, 
-  3.897035592632523*^9}},ExpressionUUID->"e9149b06-d2ad-42c7-9a27-\
-f8eaf42cb312"],
+Cell[CellGroupData[{
 
 Cell["Motivation", "Subsection",
- CellChangeTimes->{{3.8970355974678926`*^9, 
-  3.897035612058592*^9}},ExpressionUUID->"cd98ad09-3214-4754-9aa6-\
+ CellChangeTimes->{{3.8970355974678926`*^9, 3.897035612058592*^9}, {
+  3.897138231670803*^9, 
+  3.897138239377472*^9}},ExpressionUUID->"cd98ad09-3214-4754-9aa6-\
 e99e57409a71"],
+
+Cell["\<\
+Human Body Pose Estimation is a very challenging problem that has widespread \
+applications. Human Computer Interaction, Robotics, Filming Industry and \
+Medical applications are few such venues where pose and shape estimation has \
+proven to be very helpful. Although the field is in a constant cycle of \
+achieving better results, little work has been done to incorporate the state \
+of art models in the wolfram language for community to use and benefit from. \
+This project aims to implement 3D Human pose estimation from image and video \
+data using neural networks using Mathematica.\
+\>", "Text",
+ CellChangeTimes->{{3.8971382440678473`*^9, 3.897138267915946*^9}, {
+  3.8971383835327125`*^9, 3.8971384206042356`*^9}, {3.8971385404161687`*^9, 
+  3.8971385637240653`*^9}, {3.897138647056068*^9, 3.8971387431804976`*^9}, {
+  3.897138819775962*^9, 3.8971388864853783`*^9}, {3.8971464456796007`*^9, 
+  3.8971464511785603`*^9}},ExpressionUUID->"0877593c-0d4c-4d55-b377-\
+30ff0ebfe53b"]
+}, Open  ]],
+
+Cell[CellGroupData[{
 
 Cell["Objective", "Subsection",
  CellChangeTimes->{{3.8970356228212776`*^9, 
   3.897035635460528*^9}},ExpressionUUID->"64a19c6e-604e-4e2d-877c-\
 c9e3ed20086a"],
 
+Cell["\<\
+The objective of this project is to potentially leverage existing \
+advancements in the field, such as AlphaPose and MotionBERT, and adapt them \
+to the Mathematica platform as well as using existing wolfram functionalities \
+such as CenterNet and Depth Perception Net to estimate Human Pose in a \
+3-dimensional format. The initial focus will be on analyzing the existing \
+models and understanding their underlying methodologies. By studying multiple \
+approaches, this project aims to implement one of these models using Wolfram \
+Language, providing an easy to use implementation within this environment.\
+\>", "Text",
+ CellChangeTimes->{
+  3.897137636351247*^9, {3.8971378139871387`*^9, 3.8971378308784084`*^9}, {
+   3.8971380080599957`*^9, 3.8971380174866767`*^9}, {3.8971389022553024`*^9, 
+   3.897138902916127*^9}, {3.89713977704957*^9, 3.897139848452386*^9}, {
+   3.8971460205102987`*^9, 3.8971460755368094`*^9}, {3.897146105916235*^9, 
+   3.8971461490772734`*^9}, {3.897146468354127*^9, 
+   3.8971464694397383`*^9}},ExpressionUUID->"e897f4eb-2015-4686-9958-\
+4c03c5ed1d8a"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
 Cell["Scope", "Subsection",
  CellChangeTimes->{{3.897035642655577*^9, 
   3.897035650294092*^9}},ExpressionUUID->"94a0b3ab-ae09-46aa-a2ed-\
 b005b4d44e7b"],
 
+Cell["\<\
+The initial scope of this project limits to estimating the 3D pose of a \
+person from video. This will be obtained in several key steps. Firstly, the \
+project key focus will be processing input images and extracting the 3D \
+skeletons or heat-maps. This will be achieved by accurately localizing the \
+key joints and estimating their positions and orientations. The next step for \
+potential development will involve mesh regression techniques to extract the \
+3D body shape from the input image enabling the estimation of the full 3D \
+representation of the human body. Expanding beyond single images, I will then \
+explore techniques to extend the pose and shape estimation to video \
+sequences. This will involve incorporating temporal information and \
+leveraging the sequential nature of video frames to improve the accuracy and \
+robustness of the estimations.\
+\>", "Text",
+ CellChangeTimes->{
+  3.897137621393631*^9, {3.8971378406502795`*^9, 3.897137849763892*^9}, {
+   3.8971379384789295`*^9, 3.8971379873016744`*^9}, {3.8971384958616166`*^9, 
+   3.897138499395074*^9}, 3.8971388722488422`*^9, {3.897138925362172*^9, 
+   3.897138937463001*^9}, {3.8971462099517164`*^9, 3.8971462421081657`*^9}, {
+   3.8971466250406585`*^9, 3.8971466544644785`*^9}, {3.8971468783192034`*^9, 
+   3.8971468885807347`*^9}},ExpressionUUID->"a13e7603-2d31-479d-a5b9-\
+6be53867a06e"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
 Cell["Future Work", "Subsection",
- CellChangeTimes->{{3.8970356559809537`*^9, 
-  3.8970356587966166`*^9}},ExpressionUUID->"3e5f42f3-81ff-4edd-9d5f-\
-8b1460156028"]
+ CellChangeTimes->{{3.8970356559809537`*^9, 3.8970356587966166`*^9}, {
+  3.8971375928057213`*^9, 
+  3.8971375971880083`*^9}},ExpressionUUID->"3e5f42f3-81ff-4edd-9d5f-\
+8b1460156028"],
+
+Cell["\<\
+As a part of the future work, the project will aim to tackle the challenge of \
+multi-person scenarios with occlusions. Addressing this problem will involve \
+developing techniques to handle occluded body parts and accurately estimate \
+the poses and shapes of multiple individuals within the same frame.\
+\>", "Text",
+ CellChangeTimes->{
+  3.897137605430908*^9},ExpressionUUID->"65f415e6-e55e-4731-b8f2-\
+0a4d1f065421"],
+
+Cell["", "Text",
+ CellChangeTimes->{{3.8971370919683037`*^9, 
+  3.897137099877634*^9}},ExpressionUUID->"2324756f-69e7-4e6a-8a9c-\
+f805c14cd6b6"]
+}, Open  ]]
 }, Open  ]]
 }, Open  ]]
 },
@@ -99,20 +185,30 @@ Cell[CellGroupData[{
 Cell[739, 27, 171, 3, 98, "Title",ExpressionUUID->"ecd1d4ea-d67e-47f4-a919-1105da1223a6"],
 Cell[CellGroupData[{
 Cell[935, 34, 160, 3, 67, "Section",ExpressionUUID->"41fe0b7f-f0c4-4bfa-9a6b-b563a28eecae"],
-Cell[1098, 39, 191, 3, 35, "Text",ExpressionUUID->"346a3001-ca3d-41d2-94c2-86d0684cbc1e"]
+Cell[1098, 39, 341, 5, 35, "Text",ExpressionUUID->"346a3001-ca3d-41d2-94c2-86d0684cbc1e"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1326, 47, 164, 3, 67, "Section",ExpressionUUID->"3f090a20-c867-48fa-baf3-1b2c650285d3"],
-Cell[1493, 52, 172, 3, 35, "Text",ExpressionUUID->"e9149b06-d2ad-42c7-9a27-f8eaf42cb312"],
-Cell[1668, 57, 160, 3, 54, "Subsection",ExpressionUUID->"cd98ad09-3214-4754-9aa6-e99e57409a71"],
-Cell[1831, 62, 159, 3, 38, "Subsection",ExpressionUUID->"64a19c6e-604e-4e2d-877c-c9e3ed20086a"],
-Cell[1993, 67, 153, 3, 38, "Subsection",ExpressionUUID->"94a0b3ab-ae09-46aa-a2ed-b005b4d44e7b"],
-Cell[2149, 72, 163, 3, 38, "Subsection",ExpressionUUID->"3e5f42f3-81ff-4edd-9d5f-8b1460156028"]
+Cell[1476, 49, 215, 4, 67, "Section",ExpressionUUID->"3f090a20-c867-48fa-baf3-1b2c650285d3"],
+Cell[CellGroupData[{
+Cell[1716, 57, 209, 4, 54, "Subsection",ExpressionUUID->"cd98ad09-3214-4754-9aa6-e99e57409a71"],
+Cell[1928, 63, 996, 15, 127, "Text",ExpressionUUID->"0877593c-0d4c-4d55-b377-30ff0ebfe53b"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2961, 83, 159, 3, 54, "Subsection",ExpressionUUID->"64a19c6e-604e-4e2d-877c-c9e3ed20086a"],
+Cell[3123, 88, 1093, 17, 127, "Text",ExpressionUUID->"e897f4eb-2015-4686-9958-4c03c5ed1d8a"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4253, 110, 153, 3, 54, "Subsection",ExpressionUUID->"94a0b3ab-ae09-46aa-a2ed-b005b4d44e7b"],
+Cell[4409, 115, 1379, 21, 173, "Text",ExpressionUUID->"a13e7603-2d31-479d-a5b9-6be53867a06e"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5825, 141, 216, 4, 54, "Subsection",ExpressionUUID->"3e5f42f3-81ff-4edd-9d5f-8b1460156028"],
+Cell[6044, 147, 430, 8, 81, "Text",ExpressionUUID->"65f415e6-e55e-4731-b8f2-0a4d1f065421"],
+Cell[6477, 157, 144, 3, 35, "Text",ExpressionUUID->"2324756f-69e7-4e6a-8a9c-f805c14cd6b6"]
+}, Open  ]]
 }, Open  ]]
 }, Open  ]]
 }
 ]
 *)
-
-(* End of internal cache information *)
 
