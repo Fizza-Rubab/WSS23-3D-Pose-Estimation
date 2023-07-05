@@ -1,0 +1,16 @@
+fullform, ctrl+shft+e -> debugging
+TraditionalForm -> Math notation
+latex supported top bar
+
+Import -> directly images
+Export, use it with NotebookDirectory[], FileNameJoin -> save
+Get-> custom packages
+
+Change styles -> custom style sheets
+C:\Program Files\Wolfram Research\Wolfram Desktop\13.2\SystemFiles
+
+Shorthands
+/@ <--> Map
+// <--> Apply to the whole object
+/. -> Apply element wise
+@ -> replacement of [] function notation

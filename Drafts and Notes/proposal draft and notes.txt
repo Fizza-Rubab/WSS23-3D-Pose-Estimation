@@ -1,0 +1,96 @@
+spatio temporal graph neural networks
+3D Pose Estimation using Machine Learning
+
+This projec
+
+masters ->  stanford
+pHD ->  Brown unniversity
+
+
+
+
+
+
+ImageCases
+
+FASTDVD NET FOR VIDEOS DENOISATION
+what is a pure function
+video and image lectures are very important
+
+
+
+python infer_wild.py --vid_path "pexels_videos_1776352 (360p)" --json_path "alphapose-results.json" --out_path "D:\"
+
+
+
+Print["posePeaks: ", Dimensions[posePeaks], posePeaks];
+
+Print["posePeaks: ", Dimensions[posePeaks]];
+Overview and Motivation
+Human Body Pose Estimation is a very challenging problem that has widespread applications. Human Computer Interaction, Robotics, Filming Industry and Medical applications are few such venues where pose and shape estimation has proven to be very helpful. Although the field is in a constant cycle of achieving better results, little work has been done to incorporate the state of art models in the wolfram language for community to use and benefit from. This project aims to implement 3D Human pose estimation from image and video data using neural networks using Mathematica.
+
+Objective
+The objective of this project is to potentially leverage existing advancements in the field, such as AlphaPose and MotionBERT, and adapt them to the Mathematica platform as well as using existing wolfram functionalities such as CenterNet and Depth Perception Net to estimate Human Pose in a 3-dimensional format. The initial focus will be on analyzing the existing models and understanding their underlying methodologies. By studying multiple approaches, this project aims to implement one of these models using Wolfram Language, providing an easy-to-use implementation within this environment.
+
+Scope
+The initial scope of this project limits to estimating the 3D pose of a person from video. This will be obtained in several key steps. Firstly, the project key focus will be processing input images and extracting the 3D skeletons or heat-maps. This will be achieved by accurately localizing the key joints and estimating their positions and orientations. The next step for potential development will involve mesh regression techniques to extract the 3D body shape from the input image enabling the estimation of the full 3D representation of the human body. Expanding beyond single images, I will then explore techniques to extend the pose and shape estimation to video sequences. This will involve incorporating temporal information and leveraging the sequential nature of video frames to improve the accuracy and robustness of the estimations.
+
+Future Work
+As a part of the future work, the project will aim to tackle the challenge of multi-person scenarios with occlusions. Addressing this problem will involve developing techniques to handle occluded body parts and accurately estimate the poses and shapes of multiple individuals within the same frame.
+
+Key is in the posePeaks, 3 dimensional.
+Why 100 though??
+
+
+
+
+posePeaksDepths = MapAt[getDepth[#, depthMap] &, posePeaks, {2}];
+Print["posePeaksDepths: ", Dimensions[posePeaksDepths], 
+  posePeaksDepths[[1,]]];
+
+
+I have posePeaks of dimension {17,100,3}. Where the 3 dimension corresponds to keypoint number, x coordinate, y coordinate. I need to map each of these 3 length subarrays to the Value at x,y location in the depthmap. Can you write wolfram code for me
+
+
+
+
+
+
+
+
+
+Print["posePeaks: ", Dimensions[posePeaks], posePeaks[[1]]];
+  depthPeaks = Map[getDepth[#, depthMap] &, posePeaks];
+  poseOffsets = 
+    Extract[Transpose[
+      ArrayReshape[netOut["PoseOffsets"], {numKeypoints, 2, fh, fw}]],
+      Prepend[All] /@ (Flatten[posePeaks, 1] + 1)];
+  Print["poseOffsets: ", Dimensions[poseOffsets], poseOffsets[[1]]];
+  Print["depthPeaks: ", Dimensions[depthPeaks], depthPeaks[[1]]];
+  poseOffsetsNew = Map[Append[#, 0] &, poseOffsets];
+  Print["poseOffsetsNew: ", Dimensions[poseOffsetsNew], 
+    poseOffsetsNew[[1]]];
+  Print["Reshape Dimensions", {numKeypoints, Length[poseOffsetsNew]/
+    numKeypoints, 3}]; 
+  candidatePoses = 
+   ArrayReshape[
+     poseOffsetsNew, {numKeypoints, Length[poseOffsetsNew]/
+      numKeypoints, 3}] + depthPeaks[[All, All, 2 ;; All]];
+  {candidatePoses, candidatePoseScores} = 
+   filterLowScored[candidatePoses, poseScores, 
+    OptionValue["HumanPoseThreshold"]]; {candidatePoses, 
+    regressedPosesAtCenters} = (Map[
+       postprocessF, #1, {2}] &) /@ {candidatePoses, 
+     regressedPosesAtCenters};
+  Print["candidatePoses after thres: ", Dimensions[candidatePoses], 
+    candidatePoses];
+  Print["regressed poses after center: ", 
+   Dimensions[regressedPosesAtCenters], regressedPosesAtCenters]; 
+  Association[
+   "Candidate Keypoints" -> {candidatePoses, candidatePoseScores}, 
+   "Keypoints Regressed At Object Centers" -> \
+{regressedPosesAtCenters, personScores}, 
+   "ObjectDetection" -> 
+    Transpose[{boxes, detectedClasses, objectScores}], 
+   "Keypoint Depths" -> depthPeaks]
+  ];
