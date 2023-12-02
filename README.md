@@ -27,4 +27,4 @@ Here are some interesting results on images.
 <img src="Outputs/skeleton gif.gif" alt="3D Human Pose Estimation using Wolfram Language" height="300"/>
 
 
-More details can be found in this (Wolfram Community Post)[https://community.wolfram.com/groups/-/m/t/2958416]
+More details can be found in this [Wolfram Community Post](https://community.wolfram.com/groups/-/m/t/2958416)
